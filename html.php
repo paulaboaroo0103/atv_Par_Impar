@@ -3,8 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Par ou Ímpar</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Verificação de Número</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f3f3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fce7e7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #ff6b6b;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 2px solid #ff6b6b;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 200px;
+            outline: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #ff6b6b;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #ff8c8c;
+        }
+        .result p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -25,7 +74,8 @@
                     echo "<p>É ÍMPAR</p>";
                 }
                 
-                if($num == round($num)) {
+                $lastDigit = substr($num, -1);
+                if($lastDigit == 0) {
                     echo "<p>É REDONDO</p>";
                 } else {
                     echo "<p>NÃO É REDONDO</p>";
@@ -38,7 +88,7 @@
                 } else {
                     echo "<p>É NEUTRO (zero)</p>";
                 }
-           }
+            }
             ?>
         </div>
     </div>
